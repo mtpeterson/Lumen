@@ -5,15 +5,13 @@
 
 class Spark {
   public:
-    Spark(uint32_t _color);
-    Spark(uint32_t _color, int position);
-    Spark(uint32_t _color, int position, float velocity);
-    Spark(uint32_t c_olor, int position, float velocity, float accel);
-    void exampleFunction();
+    Spark(uint32_t _color, int position, bool isVis, float velocity, float accel);
+    void update();
 
   private:
-    int pos;
     uint32_t color;
+    int pos;
+    bool isVisible;
 
     float vel;
     float acl;
