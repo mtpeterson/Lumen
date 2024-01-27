@@ -23,12 +23,30 @@ void loop() {
 // I want to have a setting that looks like a rainstorm
 // The goal is to use the Sparks as raindrops falling down either side
 
-// This function would be used to set up the raindrops
+// This function is used to set up the raindrops
 void rainDropSetup(int leftTop, int rightTop, int leftBottom, int rightBottom){
+  float fallVel = 1;
+  float fallAcl = 0.1;
+
+  // Drops on the left side
   for(int i=0; i<numSparks; i+=2){
-    sparkArray[i] = new Spark(teal, leftTop);
+    sparkArray[i] = new Spark(teal, leftTop, -fallVel, -fallAcl);
+    sparkArray[i]->setBounds(leftTop, leftBottom);
+  }
+
+  // Drops on the right side
+  for(int i=1; i<numSparks; i+=2){
+    sparkArray[i] = new Spark(teal, rightTop, fallVel, fallAcl);
+    sparkArray[i]->setBounds(rightTop, rightBottom);
+  }
+}
+
+// This function is used to move the raindrops
+void rainDropFall(int vel, int acl){
+  for(int i=0; i<numSparks; i+=2){
+    if(sparkArray[i]->getBound1;
   }
   for(int i=1; i<numSparks; i+=2){
-    sparkArray[i] = new Spark(teal, rightTop);
+    // sparkArray[i] = new Spark(teal, rightTop);
   }
 }
