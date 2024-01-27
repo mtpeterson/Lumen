@@ -9,10 +9,14 @@ class Spark {
     Spark(uint32_t _color, float position, float velocity, float accel);
     Spark(uint32_t _color, float position, float velocity, float accel, bool isVis);
     void update();
-    void setBounds(float b1, float b2);
+    void resetPos();
+    void setBounds(float low, float high);
 
-    float lowBound();
-    float highBound();
+    float getLowBound();
+    float getHighBound();
+    uint32_t getColor();
+    void setPos(float newVal);
+    float getPos();
     void setVel(float newVal);
     float getVel();
     void setAcl(float newVal);
@@ -27,8 +31,8 @@ class Spark {
     bool isVisible;
     float vel;
     float acl;
-    float bound1;
-    float bound2;
+    float lowBound;
+    float highBound;
 };
 
 #endif

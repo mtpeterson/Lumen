@@ -10,13 +10,20 @@ Spark *sparkArray[numSparks];
 uint32_t teal = strip.Color(0, 255, 140);
 
 void setup() {
-  // put your setup code here, to run once:
+  rainDropSetup(, )
 
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
 
+  strip.show();
+}
+
+void showSparks(){
+  for(int i=0; i<numSparks; i++){
+    strip.setPixelColor(sparkArray[i]->getPos(), sparkArray[i]->getColor());
+  }
 }
 
 ///////////// RAINSTORM /////////////
@@ -28,25 +35,45 @@ void rainDropSetup(int leftTop, int rightTop, int leftBottom, int rightBottom){
   float fallVel = 1;
   float fallAcl = 0.1;
 
-  // Drops on the left side
+  // Drops on the left side have even indexes
   for(int i=0; i<numSparks; i+=2){
     sparkArray[i] = new Spark(teal, leftTop, -fallVel, -fallAcl);
     sparkArray[i]->setBounds(leftTop, leftBottom);
   }
 
-  // Drops on the right side
+  // Drops on the right side have odd indexes
   for(int i=1; i<numSparks; i+=2){
     sparkArray[i] = new Spark(teal, rightTop, fallVel, fallAcl);
     sparkArray[i]->setBounds(rightTop, rightBottom);
   }
 }
 
+// bool velSet = false;
+
 // This function is used to move the raindrops
 void rainDropFall(int vel, int acl){
+  // Using the highBound to represent the top corner whether on the right or left
   for(int i=0; i<numSparks; i+=2){
-    if(sparkArray[i]->getBound1;
+    if(sparkArray[i]->getPos() < sparkArray[i]->getLowBound() || sparkArray[i]->getPos() > sparkArray[i]->getHighBound()){
+      sparkArray[i]->resetPos();
+    }
+    // if(!velSet){
+    //   sparkArray[i]->setVel(vel);
+    //   sparkArray[i]->setAcl(acl);
+    // }
+    sparkArray[i]->update();
   }
   for(int i=1; i<numSparks; i+=2){
-    // sparkArray[i] = new Spark(teal, rightTop);
+    if(sparkArray[i]->getPos() < sparkArray[i]->getLowBound() || sparkArray[i]->getPos() > sparkArray[i]->getHighBound()){
+      sparkArray[i]->resetPos();
+    }
+    // if(!velSet){
+    //   sparkArray[i]->setVel(vel);
+    //   sparkArray[i]->setAcl(acl);
+    // }
+    sparkArray[i]->update();
   }
+  // if(!velSet){
+  //   velSet = true;
+  // }
 }

@@ -22,17 +22,33 @@ void Spark::update(){
   vel += acl;
 }
 
+void Spark::resetPos(){
+  pos = highBound;
+}
+
 void Spark::setBounds(float low, float high){
-  lowBound = b1;
-  highBound = b2;
+  lowBound = low;
+  highBound = high;
 }
 
-float Spark::getBound1(){
-  return bound1;
+float Spark::getLowBound(){
+  return lowBound;
 }
 
-float Spark::getBound2(){
-  return bound2;
+float Spark::getHighBound(){
+  return highBound;
+}
+
+uint32_t Spark::getColor(){
+  return color;
+}
+
+void Spark::setPos(float newVal){
+  pos = newVal;
+}
+
+float Spark::getPos(){
+  return pos;
 }
 
 void Spark::setVel(float newVal){
