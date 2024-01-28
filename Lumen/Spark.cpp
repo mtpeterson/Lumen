@@ -4,10 +4,10 @@
 #include "Spark.h"
 
 Spark::Spark(uint32_t _color, float position){
-  Spark(_color, position, 0, 0, false);
+  Spark(_color, position, 0, 0, true);
 }
 Spark::Spark(uint32_t _color, float position, float velocity, float accel){
-  Spark(_color, position, velocity, accel, false);
+  Spark(_color, position, velocity, accel, true);
 }
 Spark::Spark(uint32_t _color, float position, float velocity, float accel, bool isVis){
   color = _color;

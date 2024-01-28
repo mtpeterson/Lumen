@@ -10,13 +10,19 @@ Spark *sparkArray[numSparks];
 uint32_t teal = strip.Color(0, 255, 140);
 
 void setup() {
-  rainDropSetup(30, 75, 105, 151 )
+  Serial.begin(9600);
+  // pinMode(Neopixels, OUTPUT);
+  // pinMode(light, INPUT_PULLUP);
+  strip.begin();
+  rainDropSetup(30, 75, 105, 151);
 
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
-  rainDropFall();
+  // rainDropFall();
+  // showSparks();
+  strip.setPixelColor(1, teal);
   strip.show();
 }
 
