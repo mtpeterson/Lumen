@@ -12,19 +12,6 @@ class Spark {
     void resetPos();
     void setBounds(float low, float high);
 
-    float getLowBound();
-    float getHighBound();
-    uint32_t getColor();
-    void setPos(float newVal);
-    float getPos();
-    void setVel(float newVal);
-    float getVel();
-    void setAcl(float newVal);
-    float getAcl();
-    void setVis(bool newVal);
-    float getVis();
-
-  private:
     uint32_t color;
     float pos;
     
@@ -33,6 +20,20 @@ class Spark {
     float acl;
     float lowBound;
     float highBound;
+    // float getLowBound();
+    // float getHighBound();
+    // uint32_t getColor();
+    // void setPos(float newVal);
+    // float getPos();
+    // void setVel(float newVal);
+    // float getVel();
+    // void setAcl(float newVal);
+    // float getAcl();
+    // void setVis(bool newVal);
+    // float getVis();
+
+  private:
+    
 };
 
 #endif

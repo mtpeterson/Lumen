@@ -31,46 +31,46 @@ void Spark::setBounds(float low, float high){
   highBound = high;
 }
 
-float Spark::getLowBound(){
-  return lowBound;
-}
+// float Spark::getLowBound(){
+//   return lowBound;
+// }
 
-float Spark::getHighBound(){
-  return highBound;
-}
+// float Spark::getHighBound(){
+//   return highBound;
+// }
 
-uint32_t Spark::getColor(){
-  return color;
-}
+// uint32_t Spark::getColor(){
+//   return color;
+// }
 
-void Spark::setPos(float newVal){
-  pos = newVal;
-}
+// void Spark::setPos(float newVal){
+//   pos = newVal;
+// }
 
-float Spark::getPos(){
-  return pos;
-}
+// float Spark::getPos(){
+//   return pos;
+// }
 
-void Spark::setVel(float newVal){
-  vel = newVal;
-}
+// void Spark::setVel(float newVal){
+//   vel = newVal;
+// }
 
-float Spark::getVel(){
-  return vel;
-}
+// float Spark::getVel(){
+//   return vel;
+// }
 
-void Spark::setAcl(float newVal){
-  acl = newVal;
-}
+// void Spark::setAcl(float newVal){
+//   acl = newVal;
+// }
 
-float Spark::getAcl(){
-  return acl;
-}
+// float Spark::getAcl(){
+//   return acl;
+// }
 
-void Spark::setVis(bool newVal){
-  isVisible = newVal;
-}
+// void Spark::setVis(bool newVal){
+//   isVisible = newVal;
+// }
 
-float Spark::getVis(){
-  return isVisible;
-}
+// float Spark::getVis(){
+//   return isVisible;
+// }

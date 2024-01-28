@@ -20,15 +20,16 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-  // rainDropFall();
-  // showSparks();
-  strip.setPixelColor(1, teal);
+  rainDropFall();
+  showSparks();
+  // strip.setPixelColor(1, teal);
   strip.show();
 }
 
 void showSparks(){
   for(int i=0; i<numSparks; i++){
-    strip.setPixelColor(sparkArray[i]->getPos(), sparkArray[i]->getColor());
+    // strip.setPixelColor(sparkArray[i]->getPos(), sparkArray[i]->getColor());
+    strip.setPixelColor(sparkArray[i]->pos, sparkArray[i]->color);
   }
 }
 
@@ -60,7 +61,8 @@ void rainDropSetup(int leftTop, int leftBottom, int rightTop, int rightBottom){
 void rainDropFall(){
   // Using the highBound to represent the top corner whether on the right or left
   for(int i=0; i<numSparks; i+=2){
-    if(sparkArray[i]->getPos() < sparkArray[i]->getLowBound() || sparkArray[i]->getPos() > sparkArray[i]->getHighBound()){
+    // if(sparkArray[i]->getPos() < sparkArray[i]->getLowBound() || sparkArray[i]->getPos() > sparkArray[i]->getHighBound()){
+    if(sparkArray[i]->pos < sparkArray[i]->lowBound || sparkArray[i]->pos > sparkArray[i]->highBound){
       sparkArray[i]->resetPos();
     }
     // if(!velSet){
@@ -70,7 +72,8 @@ void rainDropFall(){
     sparkArray[i]->update();
   }
   for(int i=1; i<numSparks; i+=2){
-    if(sparkArray[i]->getPos() < sparkArray[i]->getLowBound() || sparkArray[i]->getPos() > sparkArray[i]->getHighBound()){
+    // if(sparkArray[i]->getPos() < sparkArray[i]->getLowBound() || sparkArray[i]->getPos() > sparkArray[i]->getHighBound()){
+    if(sparkArray[i]->pos < sparkArray[i]->lowBound || sparkArray[i]->pos > sparkArray[i]->highBound){
       sparkArray[i]->resetPos();
     }
     // if(!velSet){
