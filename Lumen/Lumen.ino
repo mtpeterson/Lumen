@@ -10,13 +10,13 @@ Spark *sparkArray[numSparks];
 uint32_t teal = strip.Color(0, 255, 140);
 
 void setup() {
-  rainDropSetup(, )
+  rainDropSetup(30, 75, 105, 151 )
 
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
-
+  rainDropFall();
   strip.show();
 }
 
@@ -31,7 +31,7 @@ void showSparks(){
 // The goal is to use the Sparks as raindrops falling down either side
 
 // This function is used to set up the raindrops
-void rainDropSetup(int leftTop, int rightTop, int leftBottom, int rightBottom){
+void rainDropSetup(int leftTop, int leftBottom, int rightTop, int rightBottom){
   float fallVel = 1;
   float fallAcl = 0.1;
 
@@ -51,7 +51,7 @@ void rainDropSetup(int leftTop, int rightTop, int leftBottom, int rightBottom){
 // bool velSet = false;
 
 // This function is used to move the raindrops
-void rainDropFall(int vel, int acl){
+void rainDropFall(){
   // Using the highBound to represent the top corner whether on the right or left
   for(int i=0; i<numSparks; i+=2){
     if(sparkArray[i]->getPos() < sparkArray[i]->getLowBound() || sparkArray[i]->getPos() > sparkArray[i]->getHighBound()){
